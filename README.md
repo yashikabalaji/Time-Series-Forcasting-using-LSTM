@@ -1,10 +1,10 @@
-# 🔧 CNC Spindle Current Prediction using LSTM and Transfer Learning
+# CNC Spindle Current Prediction using LSTM and Transfer Learning
 
 This project explores an energy-efficient predictive maintenance strategy for CNC milling machines by using **Long Short-Term Memory (LSTM)** networks enhanced with **Transfer Learning**. It enables accurate spindle current prediction across varying materials and machining conditions with reduced labeled data and computational cost.
 
 ---
 
-## 🚀 Overview
+## Overview
 
 - Implements a transfer learning framework using LSTM networks for **time-series spindle current prediction**.
 - Optimizes **energy usage and predictive maintenance** in CNC machines.
@@ -14,17 +14,17 @@ This project explores an energy-efficient predictive maintenance strategy for CN
 
 ---
 
-## 🧠 Key Contributions
+## Key Contributions
 
-- ✅ **Transfer learning-enabled LSTM** model for scalable spindle current prediction.
-- ✅ **Reduced data dependency** through knowledge transfer from one domain to another.
-- ✅ Robust generalization across **materials**, **machining methods**, and **geometries**.
-- ✅ Data-efficient fine-tuning and optimization using early stopping, dropout, and learning rate scheduling.
-- ✅ Thorough evaluation using **MSE, RMSE, MAE, R²**.
+- **Transfer learning-enabled LSTM** model for scalable spindle current prediction.
+- **Reduced data dependency** through knowledge transfer from one domain to another.
+- Robust generalization across **materials**, **machining methods**, and **geometries**.
+- Data-efficient fine-tuning and optimization using early stopping, dropout, and learning rate scheduling.
+- Thorough evaluation using **MSE, RMSE, MAE, R²**.
 
 ---
 
-## 📁 Dataset
+## Dataset
 
 - Collected from CNC milling of objects called *Bautiel 1* and *Bautiel 2* under varying conditions.
 - Includes measurements for spindle current, tool position, velocities, accelerations, and air-cut status.
@@ -43,20 +43,20 @@ This project explores an energy-efficient predictive maintenance strategy for CN
 
 ---
 
-## 🔄 Transfer Learning Strategy
+## Transfer Learning Strategy
 
 1. **Base Training**: Train LSTM on one material/component/condition (e.g., Steel + Bautiel 1 without air cut).
 2. **Fine-Tuning**: Unfreeze last 2 layers, and adapt to new data (e.g., Aluminum or Bautiel 2).
 3. **Optimization**: Fine-tune for 50 epochs with reduced learning rate (0.0001).
 
 **Transfer cases include:**
-- 🔁 Steel ↔ Aluminum (cross-material)
-- 🔁 Bautiel 1 ↔ Bautiel 2 (cross-component)
-- 🔁 With ↔ Without air-cut (cross-condition)
+- Steel ↔ Aluminum (cross-material)
+- Bautiel 1 ↔ Bautiel 2 (cross-component)
+- With ↔ Without air-cut (cross-condition)
 
 ---
 
-## 📊 Results Summary
+## 📊 Results
 
 | Transfer Setup | RMSE ↓ | MAE ↓ | R² ↑ |
 |----------------|--------|-------|------|
@@ -71,7 +71,7 @@ This project explores an energy-efficient predictive maintenance strategy for CN
 
 ---
 
-## 🔬 Evaluation Metrics
+## Evaluation Metrics
 
 - **MSE**: Penalizes large deviations (sensitive to spikes).
 - **RMSE**: Same units as target (e.g., spindle current).
@@ -80,7 +80,7 @@ This project explores an energy-efficient predictive maintenance strategy for CN
 
 ---
 
-## 📦 How to Use
+## How to Use
 
 ```bash
 # Clone and install dependencies
@@ -97,7 +97,7 @@ python transfer_train.py --base_model checkpoints/base_model.pth --target_data d
 
 ---
 
-## 💡 Future Work
+## Future Work
 
 - Explore **GRU, CNN-LSTM, or attention** for better generalization.
 - Integrate **feature selection** (e.g., PCA, L1 regularization).
@@ -105,16 +105,3 @@ python transfer_train.py --base_model checkpoints/base_model.pth --target_data d
 - Add **explainability** tools for industrial deployment.
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License. See `LICENSE` for details.
-
----
-
-## 👥 Authors
-
-Ajay Raja Ram Alageshan, Bhavya Baburaj Chovatta Valappil,  
-Dinesh Babu Gopinath Hemavathi, Sai Nithin Reddy Ankireddy, Yashika Balaji  
-Institute for Intelligent Cooperating Systems, Otto von Guericke University Magdeburg  
-Project under Autonomous Multisensor Systems (AMS)
